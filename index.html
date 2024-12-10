@@ -29,17 +29,36 @@
   <div class="game-area">
     <!-- Container section: Controls-->
     <div class="controls-area">
-      <button class="btn btn--bg btn--green"></button> <!-- 3 classes: btn, btn big and btn color, in this case green-->
-      <button class="btn btn--bg btn--blue"></button>
-      <button class="btn btn--bg btn--orange"></button>
-      <button class="btn btn--bg btn--red"></button>
+      <!--Each Button has 3 classes: btn, btn big and btn color, in this case green-->
+      <button class="btn btn--bg btn--green">
+        <i class="fas fa-plus"></i> <!-- fas: class base of Fontawesome and fa-plus: the fontAwesome PLUS sign-->
+      </button>
+      <button class="btn btn--bg btn--blue">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button class="btn btn--bg btn--orange">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="btn btn--bg btn--red">
+        <i class="fas fa-divide"></i>
+      </button>
     </div>
 
     <!-- Container section: Questions-->
-    <div class="questions-area"></div>
+    <div class="questions-area">
+      <span id="operand1">0</span> <!-- 0 as placeholder text-->
+      <span id="operator">x</span>
+      <span id="operand2">0</span>
+      <!--The Result: does not require an ID because the = does not need to be reference from JS-->
+      <span>=</span>
+      <!--p only visible in mobile, and will be styled with css-->
+      <p class="answer-message">Enter Answer:</p>
+      <!-- Finally we need an input area-->
+      <input type="number" id="answer-box">
+    </div>
 
     <!-- Container section: Submit -->
-    <button></button>
+    <button class="btn btn--gray">Submit answer</button>
   </div>
 
   <!-- Score -->
