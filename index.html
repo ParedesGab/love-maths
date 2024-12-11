@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--Google Fonts link-->
-  <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
-  <!-- FontAwesome link-->
+  <!-- font awesome and google fonts -->
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
   <!-- CSS link-->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -30,16 +31,16 @@
     <!-- Container section: Controls-->
     <div class="controls-area">
       <!--Each Button has 3 classes: btn, btn big and btn color, in this case green-->
-      <button class="btn btn--bg btn--green">
+      <button data-type="addition" class="btn btn--big btn--green">
         <i class="fas fa-plus"></i> <!-- fas: class base of Fontawesome and fa-plus: the fontAwesome PLUS sign-->
       </button>
-      <button class="btn btn--bg btn--blue">
+      <button data-type="subtract" class="btn btn--big btn--blue">
         <i class="fas fa-minus"></i>
       </button>
-      <button class="btn btn--bg btn--orange">
+      <button data-type="multiply" class="btn btn--big btn--orange">
         <i class="fas fa-times"></i>
       </button>
-      <button class="btn btn--bg btn--red">
+      <button data-type="division" class="btn btn--big btn--red">
         <i class="fas fa-divide"></i>
       </button>
     </div>
@@ -53,12 +54,12 @@
       <span>=</span>
       <!--p only visible in mobile, and will be styled with css-->
       <p class="answer-message">Enter Answer:</p>
-      <!-- Finally we need an input area-->
+      <!-- Finally we need an input field-->
       <input type="number" id="answer-box">
     </div>
 
-    <!-- Container section: Submit -->
-    <button class="btn btn--gray">Submit answer</button>
+    <!-- Container section: Submit the answer -->
+    <button data-type="submit" class="btn btn--gray">Submit answer</button>
   </div>
 
   <!-- Score -->
