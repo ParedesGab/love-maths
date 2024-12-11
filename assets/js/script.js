@@ -17,21 +17,31 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("You clicked submit!"); //alert is a type of popup message
       } else {
         let gameType = this.getAttribute("data-type");
-        alert(`You clicked ${gameType}`);
+        runGame(gameType);
       }
     })
   }
+
+  //Default game: addition
+  runGame("addition");
+
 })
 
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
  */
-function runGame() {
+function runGame(gameType) {
   // Create 2 random integers between 1 and 25 
-  let operand1 = Math.floor(Math.random() * 25) + 1;
-  let operand2 = Math.floor(Math.random() * 25) + 1;
+  let num1 = Math.floor(Math.random() * 25) + 1;
+  let num2 = Math.floor(Math.random() * 25) + 1;
 
+  if (gameType === "addition") {
+    displayAdditionQuestion(num1, num2); //if the game type is addition then display the Addition Question
+  } else {
+    alert(`unknown game type : ${gameType}`); //if it is unkwnon, if there is an error, then alert the user
+    throw `unknown game type : ${gameType}. Aborting!`; //throw is a JS keyword which will stop the game from running
+  }
 }
 
 
@@ -51,7 +61,10 @@ function incrementWrongAnswer() {
 
 }
 
-function displayAdditionQuestion() {
+function displayAdditionQuestion(operand1, operand2) {
+  document.getElementById("operand1").textContent = operand1; //textContent is the placeholder!!!
+  document.getElementById("operand2").textContent = operand2;
+  document.getElementById("operator").textContent = "+";
 
 }
 
