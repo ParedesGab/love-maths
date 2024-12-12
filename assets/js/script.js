@@ -38,6 +38,8 @@ function runGame(gameType) {
 
   if (gameType === "addition") {
     displayAdditionQuestion(num1, num2); //if the game type is addition then display the Addition Question
+  } else if (gameType === "multiply") {
+    displayMultiplyQuestion(num1, num2);
   } else {
     alert(`unknown game type : ${gameType}`); //if it is unkwnon, if there is an error, then alert the user
     throw `unknown game type : ${gameType}. Aborting!`; //throw is a JS keyword which will stop the game from running
@@ -73,6 +75,8 @@ function calculateCorrectAnswer() {
 
   if (operator === "+") {
     return [operand1 + operand2, "addition"]; // Will return AN ARRAY with two elements: result and game type (e.g [9, "addition"])
+  } else if (operator === "x") {
+    return [operand1 * operand2, "multiply"];
   } else {
     alert(`Unimplemented ${operator}`);
     throw `Unimplemented ${operator}. Aborting!`;
@@ -105,6 +109,9 @@ function displaySubstractQuestion() {
 
 }
 
-function displayMultiplyQuestion() {
-
+/**Writes the Operands and Operator BACK to the DOM */
+function displayMultiplyQuestion(operand1, operand2) {
+  document.getElementById("operand1").textContent = operand1;
+  document.getElementById("operand2").textContent = operand2;
+  document.getElementById("operator").textContent = "x";
 }
