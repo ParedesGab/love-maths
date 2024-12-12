@@ -54,8 +54,10 @@ function checkAnswer() {
 
   if (isCorrect) {
     alert("Hey! You got it right! :D");
+    incrementScore();
   } else {
     alert(`Sorry! the correct answer is ${calculatedAnswer[0]}!`);
+    incrementWrongAnswer();
   }
 
   runGame(calculatedAnswer[1]); //This will create another addition question
@@ -77,14 +79,21 @@ function calculateCorrectAnswer() {
   }
 }
 
+/**Get the current score from the DOM and increments it by 1
+ */
 function incrementScore() {
-
+  let oldScore = parseInt(document.getElementById("score").innerText); //Retrieve the old score 
+  document.getElementById("score").innerText = ++oldScore; //wRITE IT BACK TO THE DOM! Note that .textContent can also be used!
 }
 
+/**Get the current wrong score from the DOM and increments it by 1
+ */
 function incrementWrongAnswer() {
-
+  let oldScore = parseInt(document.getElementById("incorrect").innerText);
+  document.getElementById("incorrect").innerText = ++oldScore;
 }
 
+/**Writes the Operands and Operator BACK to the DOM */
 function displayAdditionQuestion(operand1, operand2) {
   document.getElementById("operand1").textContent = operand1; //textContent is the placeholder!!!
   document.getElementById("operand2").textContent = operand2;
